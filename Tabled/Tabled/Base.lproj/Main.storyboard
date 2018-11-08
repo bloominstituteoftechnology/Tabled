@@ -62,7 +62,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1cQ-nF-nFm"/>
+                    <navigationItem key="navigationItem" id="1cQ-nF-nFm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="akg-qz-i3v">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="cYp-EP-3Ai"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5am-f8-apM" id="wa4-mp-B5B"/>
                         <outlet property="textField" destination="yQM-6X-fzz" id="Z9g-Uw-RhK"/>

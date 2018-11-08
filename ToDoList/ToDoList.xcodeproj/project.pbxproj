@@ -12,6 +12,7 @@
 		ABDAAF1E2194EEF60056A0A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDAAF1C2194EEF60056A0A5 /* Main.storyboard */; };
 		ABDAAF202194EEF60056A0A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABDAAF1F2194EEF60056A0A5 /* Assets.xcassets */; };
 		ABDAAF232194EEF60056A0A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABDAAF212194EEF60056A0A5 /* LaunchScreen.storyboard */; };
+		ABDAAF2D2194F5720056A0A5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABDAAF2C2194F5720056A0A5 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		ABDAAF1F2194EEF60056A0A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABDAAF222194EEF60056A0A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABDAAF242194EEF60056A0A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABDAAF2C2194F5720056A0A5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				ABDAAF182194EEF60056A0A5 /* AppDelegate.swift */,
 				ABDAAF1A2194EEF60056A0A5 /* ViewController.swift */,
+				ABDAAF2C2194F5720056A0A5 /* Model.swift */,
 				ABDAAF1C2194EEF60056A0A5 /* Main.storyboard */,
 				ABDAAF1F2194EEF60056A0A5 /* Assets.xcassets */,
 				ABDAAF212194EEF60056A0A5 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABDAAF2D2194F5720056A0A5 /* Model.swift in Sources */,
 				ABDAAF1B2194EEF60056A0A5 /* ViewController.swift in Sources */,
 				ABDAAF192194EEF60056A0A5 /* AppDelegate.swift in Sources */,
 			);

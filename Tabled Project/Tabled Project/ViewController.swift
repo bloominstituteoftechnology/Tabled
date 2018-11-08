@@ -10,6 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   var reuseIdentifier = "cell"
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    @IBAction func add(_ sender: Any) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

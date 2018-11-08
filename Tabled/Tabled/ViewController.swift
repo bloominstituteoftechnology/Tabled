@@ -8,7 +8,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     @IBAction func add(_ sender: Any) {
         guard let text = textField.text, !text.isEmpty else { return }
-        Model.shared.addValue(text)
+        Model.shared.addItem(text)
         textField.text = nil
         tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)
     }
@@ -31,13 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        // Enable "magic" swipe-to-delete
         guard editingStyle == .delete else { return }
-        
-        // Implement here
-    }
-        Model.shared.removeValue(at: indexPath.row)
+        Model.shared.removeItem(at: indexPath.row)
         tableView.deleteRows(at: ([indexPath]), with: .fade)
     }
     @IBAction func editTable(_ sender: Any) {
@@ -50,14 +45,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
     }
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        Model.shared.moveItem(at: sourceIndexPath.row, to: destinationIndexPath.row)
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
         tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = Model.shared.item(at: indexPath.row)
-        let message = "You selected \(item)"
-        present(UIAlertController.message(message), animated: true, completion: nil)
-    }
+    
 }
 
 

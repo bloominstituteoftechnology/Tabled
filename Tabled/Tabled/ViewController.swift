@@ -2,15 +2,65 @@ import UIKit
 
 let reuseIdentifier = "cell"
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //Outlets
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func add(_ sender: Any) {
+        guard let text = textField.text, !text.isEmpty else {return}
         
+        Model.shared.addItem(text)
+        textField.text = nil
+        //still not sure why need to be so specific about where it is being inserted
+        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //stating the delegate
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.reloadData()
+    }
+    
+    //tableView setup funcs
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Model.shared.itemCount()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        
+        cell.textLabel?.text = Model.shared.item(at: indexPath.row)
+        return cell
+    }
+    
+    //tableView editing funcs
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard editingStyle == .delete else {return}
+        Model.shared.removeItem(at: indexPath.row) //update model
+        tableView.deleteRows(at: [indexPath], with: .fade) //update view
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row) //update model
+        tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath) //update view
+    }
+    
+    //objc funcs
+    @IBAction func editTable(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+    }
+    
+    @objc
+    func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+    }
 }
 

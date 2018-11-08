@@ -1,20 +1,18 @@
-//
-//  ViewController.swift
-//  11.8-Tabled
-//
-//  Created by Lambda_School_Loaner_18 on 11/8/18.
-//  Copyright © 2018 Lambda_School_Loaner_18. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let reuseIdentifier = "cell"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBAction func add(_ sender: Any) {
+        //add code
     }
-
-
-}
+    
+    
+    
+    }
 

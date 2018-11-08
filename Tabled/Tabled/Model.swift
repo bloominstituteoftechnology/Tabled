@@ -1,9 +1,48 @@
-//
-//  Model.swift
-//  Tabled
-//
-//  Created by Sameera Leola on 11/8/18.
-//  Copyright © 2018 Sameera Leola. All rights reserved.
-//
-
 import Foundation
+
+class Model {
+    static let shared = Model()
+    private init() {}
+    
+    private var items: [String] = ["Do laundry", "Rearrange desk", "Call cable company", "Call supply company", "Go to office supply store"]
+    
+    func addItem(_ item: String) {
+        items.append(item)
+        saveData()
+    }
+    
+    func removeItem(at index: Int) {
+        items.remove(at: index)
+        saveData()
+    }
+    
+    func moveItem(at index: Int, to destinationIndex: Int) {
+//        let value = items.remove(from: index)
+        let value = items.remove(at: index)
+        items.insert(value, at: destinationIndex)
+        saveData()
+    }
+    
+    func itemCount() -> Int {
+        return items.count
+    }
+    
+    func item(at index: Int) -> String {
+        return items[index]
+    }
+    
+    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
+        .appendingPathComponent("Library")
+        .appendingPathComponent("ToDo")
+        .appendingPathExtension("plist")
+    
+    func saveData() {
+        try! (items as NSArray).write(to: fileURL)
+    }
+    
+    func loadData() {
+        if let items = NSArray(contentsOf: fileURL) as? [String] {
+            self.items = items
+        }
+    }
+}

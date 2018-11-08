@@ -12,6 +12,7 @@
 		3762EE392194ED3500D88DD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3762EE372194ED3500D88DD8 /* Main.storyboard */; };
 		3762EE3B2194ED3600D88DD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3762EE3A2194ED3600D88DD8 /* Assets.xcassets */; };
 		3762EE3E2194ED3600D88DD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3762EE3C2194ED3600D88DD8 /* LaunchScreen.storyboard */; };
+		37C3ABA02194FB9400B346C7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3AB9F2194FB9400B346C7 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3762EE3A2194ED3600D88DD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3762EE3D2194ED3600D88DD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3762EE3F2194ED3600D88DD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37C3AB9F2194FB9400B346C7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3762EE332194ED3500D88DD8 /* AppDelegate.swift */,
 				3762EE352194ED3500D88DD8 /* ViewController.swift */,
+				37C3AB9F2194FB9400B346C7 /* Model.swift */,
 				3762EE372194ED3500D88DD8 /* Main.storyboard */,
 				3762EE3A2194ED3600D88DD8 /* Assets.xcassets */,
 				3762EE3C2194ED3600D88DD8 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C3ABA02194FB9400B346C7 /* Model.swift in Sources */,
 				3762EE362194ED3500D88DD8 /* ViewController.swift in Sources */,
 				3762EE342194ED3500D88DD8 /* AppDelegate.swift in Sources */,
 			);

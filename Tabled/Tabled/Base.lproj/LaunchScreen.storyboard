@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController id="01J-lp-oVM" customClass="ViewController" customModule="Tabled" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,6 +32,9 @@
                                             <constraint firstAttribute="width" constant="30" id="ZiY-xA-xnV"/>
                                         </constraints>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="01J-lp-oVM" eventType="touchUpInside" id="83R-5Y-3VU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -63,6 +66,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Cd8-if-fgB"/>
+                    <connections>
+                        <outlet property="tableView" destination="mO4-Ls-Ux4" id="eIU-KV-NCU"/>
+                        <outlet property="textField" destination="AiB-ad-eCc" id="qWS-87-9fQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

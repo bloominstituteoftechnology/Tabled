@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         Model.shared.removeItem(at: indexPath.row)
-        tableView.deleteRows(at: ([indexPath]), with: .fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     @IBAction func editTable(_ sender: Any) {
         tableView.setEditing(true, animated: true)

@@ -60,6 +60,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="1cQ-nF-nFm"/>
+                    <connections>
+                        <outlet property="tableView" destination="5am-f8-apM" id="wa4-mp-B5B"/>
+                        <outlet property="textField" destination="yQM-6X-fzz" id="Z9g-Uw-RhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

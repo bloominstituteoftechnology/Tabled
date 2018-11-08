@@ -11,8 +11,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = Model.shared.item(at: indexPath.row)
         return cell
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+        
+    }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Enable "magic" swipe-to-delete
+        guard editingStyle == .delete else { return }
+        
+        // Implement here
+        Model.shared.removeItem(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .fade)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
+    }
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!

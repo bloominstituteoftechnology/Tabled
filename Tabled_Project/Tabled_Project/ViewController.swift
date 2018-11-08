@@ -21,11 +21,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let reuseIdentifier = "cell"
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,11 +34,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        cell.textLabel?.text = Model.shared.item(at: indexPath.row)
+        return cell
     }
-
-
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        Model.shared.removeItem(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+      Model.shared.moveItem(at: sourceIndexPath.row, to: destinationIndexPath.row)
+      tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
+    }
+    
 }
 
-tableView.dataSource = self
-tableView.delegate = self
+
+
+

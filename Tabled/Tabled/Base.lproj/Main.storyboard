@@ -43,6 +43,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCX-g6-7fe">
                                         <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Z7-JL-yuJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -60,6 +63,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="AYf-0L-T9C"/>
+                    <connections>
+                        <outlet property="tableView" destination="AB1-PB-vXp" id="LFZ-IS-9wQ"/>
+                        <outlet property="textField" destination="q7E-r2-snL" id="zo1-eX-Cqx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

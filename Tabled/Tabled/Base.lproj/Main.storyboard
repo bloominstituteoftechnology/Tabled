@@ -35,7 +35,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZS7-CY-EAk">
                                 <rect key="frame" x="8" y="72" width="359" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqZ-q9-APB">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To Do Item..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GqZ-q9-APB">
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -63,7 +63,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IvD-ZI-Clq"/>
+                    <navigationItem key="navigationItem" id="IvD-ZI-Clq">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="u6I-ML-XIH">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="sHk-BM-3Hp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="j6G-KA-PQB" id="R9F-yJ-h6u"/>
                         <outlet property="textField" destination="GqZ-q9-APB" id="mCN-hq-fN9"/>

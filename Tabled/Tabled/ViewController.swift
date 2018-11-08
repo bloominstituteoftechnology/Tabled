@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
 
     
     @IBOutlet weak var textField: UITextField!
@@ -60,6 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
     }
     
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         
         Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
@@ -68,5 +69,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = Model.shared.item(at: indexPath.row)
+        let message = "You selected \(item)"
+        present(UIAlertController.message(message), animated: true, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        becomeFirstResponder()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        resignFirstResponder()
+    }
+    
+    func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
 
 }

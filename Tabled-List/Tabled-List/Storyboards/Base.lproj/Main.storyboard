@@ -65,7 +65,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="IdS-o1-vgg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1KB-Zo-n7k"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="1KB-Zo-n7k">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="13s-iG-dXD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addItemTextField" destination="Pt5-fN-qHk" id="F1U-DS-Dda"/>

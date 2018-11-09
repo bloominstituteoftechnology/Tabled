@@ -41,8 +41,8 @@ Follow these steps to set up your project:
 - Add the field and the button to a horizontal stack view (8 points between the items). 
 - Stretch the top, left, and right of the stack view to 8 points of the surrounding safe space.
 - Stretch the table view to the bottom, left, and right to 8 points of the surrounding safe space and add a 20 point spacer at the top to its nearest neighbor, which is the stack view.
-- Set the Add button's hugging priority to 500
-- Add a cell to the table. Set its re-use identifier to "cell"
+- Set the Add button's horizontal hugging priority to 500
+- Add a cell to the table. In the Attributes Inspector, set its re-use identifier to "cell"
 - Embed the view controller in a navigation controller.
 
 ## Setting up ViewController.swift
@@ -54,7 +54,7 @@ Make the following connections from IB:
 
 Then, in ViewController.swift
 
-* Create a property called `reuseIdentifier` and set it to "cell".
+* Create a property (constant) called `reuseIdentifier` and set it to "cell".
 
 ## Building your Model
 
@@ -100,7 +100,7 @@ class Model {
     
     func loadData() {
         if let items = NSArray(contentsOf: fileURL) as? [String] {
-            items = items
+            self.items = items
         }
     }
 }

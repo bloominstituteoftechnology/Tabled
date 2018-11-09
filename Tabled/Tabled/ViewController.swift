@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Implement here
         Model.shared.removeItem(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .fade)
+        
         
     }
     
@@ -49,10 +49,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         guard let text = textField.text, !text.isEmpty else {return}
         Model.shared.addItem(text)
         tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .fade)
+        textField.text = nil
         
     }
     
     let reuseIdentifier = "cell"
+    
+    
+    @IBAction func editTable(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+    }
+    
+    @objc
+    func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+    }
+    
     
 }
 

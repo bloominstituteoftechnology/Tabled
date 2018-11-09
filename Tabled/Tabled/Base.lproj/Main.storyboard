@@ -44,7 +44,7 @@
                                         <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
-                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Z7-JL-yuJ"/>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2vH-EE-N8l"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -62,10 +62,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AYf-0L-T9C"/>
+                    <navigationItem key="navigationItem" id="AYf-0L-T9C">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="kUp-Xv-JrP">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="VuC-Fw-nkV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="AB1-PB-vXp" id="LFZ-IS-9wQ"/>
-                        <outlet property="textField" destination="q7E-r2-snL" id="zo1-eX-Cqx"/>
+                        <outlet property="tableView" destination="AB1-PB-vXp" id="iYY-Um-09H"/>
+                        <outlet property="textField" destination="q7E-r2-snL" id="U2N-yJ-73U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

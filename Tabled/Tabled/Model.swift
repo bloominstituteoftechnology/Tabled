@@ -16,8 +16,8 @@ class Model {
         saveData()
     }
     
-    func moveItem(at index: Int, to destinationIndex: Int) {
-//        let value = items.remove(from: index)
+    func moveItem(from index: Int, to destinationIndex: Int) {
+       // let value = items.remove(from: index)
         let value = items.remove(at: index)
         items.insert(value, at: destinationIndex)
         saveData()

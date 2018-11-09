@@ -48,6 +48,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let edit = Model.shared.item(indexPath.row)
+        addItemTextField.text = edit
+        Model.shared.removeItem(indexPath.row)
+        
+        
+        //Model.shared.editItem(indexPath.row)
+
+    }
+    
     @IBAction func editTable(_ sender: Any) {
         tableView.setEditing(true, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))

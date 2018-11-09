@@ -19,7 +19,7 @@ class Model {
     func moveItem(from index: Int, to destinationIndex: Int) {
         let item = items.remove(at: index)
         items.remove(at: index)
-        items.insert(item, at: newIndex)
+        items.insert(item, at: destinationIndex)
         saveData()
     }
     

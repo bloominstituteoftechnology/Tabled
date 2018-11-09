@@ -1,6 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     
 
     @IBOutlet weak var textField: UITextField!
@@ -10,12 +11,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBAction func add(_ sender: Any) {
-        guard let toDoItem = textField.text, !toDoItem.isEmpty else { return }
-    
         
-        Model.shared.addValue(text)
+        guard let text = textField.text, !text.isEmpty else { return }
+        
+        
+        Model.shared.addItem(text)
         textField.text = nil
-        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)]
+        
+        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -30,5 +33,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
         }
 
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Enable "magic" swipe-to-delete
+        
+        guard editingStyle == .delete else { return }
+        
+        Model.shared.removeItem(at: indexPath.row)
+
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    
     }
 }

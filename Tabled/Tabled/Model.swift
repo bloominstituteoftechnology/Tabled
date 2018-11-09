@@ -4,7 +4,7 @@ class Model {
     static let shared = Model()
     private init() {}
     
-    private var items: [String] = ["Do laundry", "Rearrange desk", "Call cable company", "Call supply company", "Go to office supply store"]
+    private var items: [String] = []
     
     func addItem(_ item: String) {
         items.append(item)

@@ -8,7 +8,7 @@ class Model {
     private var items: [String] = []
     
     func addItem(_ item: String) {
-        // fill this in
+        items.append(item)
     }
     
     func removeItem(at index: Int) {

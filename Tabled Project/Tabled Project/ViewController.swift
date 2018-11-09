@@ -8,6 +8,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    ///////////////// ADD BUTTON FUNCTIONALITY //////////////////////////////////
     @IBAction func add(_ sender: Any) {
         
         guard let text = textField.text, !text.isEmpty else {return}
@@ -20,15 +21,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // So we can see the new cell.
         //tableView.reloadData()
         tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)
-    
     }
     
+    
+    
+    /////// ?????? CUZ YOU TOLD ME TO, DRILL SERGEANT! /////////////////
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Model.shared.itemCount()

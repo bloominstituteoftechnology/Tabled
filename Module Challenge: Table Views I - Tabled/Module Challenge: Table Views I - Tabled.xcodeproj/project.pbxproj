@@ -13,6 +13,7 @@
 		273D04002194E68200F32B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273D03FF2194E68200F32B61 /* Assets.xcassets */; };
 		273D04032194E68200F32B61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273D04012194E68200F32B61 /* LaunchScreen.storyboard */; };
 		273D040B2194FB7300F32B61 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D040A2194FB7300F32B61 /* Model.swift */; };
+		273D040D219527A300F32B61 /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D040C219527A300F32B61 /* AlertUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		273D04022194E68200F32B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		273D04042194E68200F32B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273D040A2194FB7300F32B61 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		273D040C219527A300F32B61 /* AlertUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				273D03F82194E68100F32B61 /* AppDelegate.swift */,
 				273D03FA2194E68100F32B61 /* ViewController.swift */,
 				273D040A2194FB7300F32B61 /* Model.swift */,
+				273D040C219527A300F32B61 /* AlertUtility.swift */,
 				273D03FC2194E68100F32B61 /* Main.storyboard */,
 				273D03FF2194E68200F32B61 /* Assets.xcassets */,
 				273D04012194E68200F32B61 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				273D040B2194FB7300F32B61 /* Model.swift in Sources */,
+				273D040D219527A300F32B61 /* AlertUtility.swift in Sources */,
 				273D03FB2194E68100F32B61 /* ViewController.swift in Sources */,
 				273D03F92194E68100F32B61 /* AppDelegate.swift in Sources */,
 			);

@@ -1,32 +1,36 @@
 import Foundation
+import UIKit
 
 class Model {
-    static let shareed = Model()
+    static let shared = Model()
     private init() {}
     
     private var items: [String] = []
     
+    func itemCount() -> Int {
+        return items.count
+    }
+
+    func item(at index: Int) -> String {
+        return items[index]
+    }
+    
     func addItem(_ item: String) {
         items.append(item)
+        saveData()
     }
 
     func removeItem(at index: Int) {
         items.remove(at: index)
+        saveData()
     }
     
     func moveItem(from index: Int, to destinatonIndex: Int) {
         let item = items.remove(at: index)
         items.insert(item, at: destinatonIndex)
+        saveData()
     }
-    
-    func itemCount() -> Int {
-        return items.count
-    }
-    
-    func item(at index: Int) -> String {
-        return items[index]
-    }
-    
+   
     let fileURL = URL(fileURLWithPath: NSHomeDirectory())
         .appendingPathComponent("Library")
         .appendingPathComponent("ToDo")

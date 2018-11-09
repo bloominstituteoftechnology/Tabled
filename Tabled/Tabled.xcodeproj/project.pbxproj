@@ -60,8 +60,8 @@
 				3762EE352194ED3500D88DD8 /* ViewController.swift */,
 				37C3AB9F2194FB9400B346C7 /* Model.swift */,
 				3762EE372194ED3500D88DD8 /* Main.storyboard */,
-				3762EE3A2194ED3600D88DD8 /* Assets.xcassets */,
 				3762EE3C2194ED3600D88DD8 /* LaunchScreen.storyboard */,
+				3762EE3A2194ED3600D88DD8 /* Assets.xcassets */,
 				3762EE3F2194ED3600D88DD8 /* Info.plist */,
 			);
 			path = Tabled;

@@ -1,0 +1,27 @@
+Day 4 Freeform questions
+1. What is delegation and why do developers use it?
+Delegation is a pattern used by developers in which objects (a delegator) hand off selected
+responsibilities to another object (the delegate).
+
+
+2. Why is a table view's data source a kind of delegation? And how does
+it differ from a table view's delegate?
+Table View has a data source and delegate. They are both a kind of delegation because
+the Table View does not know on its own without requesting a data source what it should
+display. It has "delegated" its responsibility to know its contents to data source.
+It does differ from the Table View delegate in that what that delegation involves is the
+instructions (such and number of rows or sections) for its actual construction.
+In this case, independent of what it needs to display, the table view has outsourced even
+the details of its "structure".
+
+3. Why use animation in the table when adding, removing, or reordering items?
+We use animation in order to maintain good and consistent user experience.
+
+4. Why use a model? Why not just update an array of items directly in your table?
+This is so that a model can be reused in other applications without being hard coded with
+any given application's specific data. This is part of the MVC pattern, which addition to
+separating the data from the model also provides safety.
+
+5. When do you call reloadData ? When don't you?
+Reload data is called each time a controller is called upon to modify data. It is not called
+if data is simply read.

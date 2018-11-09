@@ -60,14 +60,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    // Woo! A real Table View delegate delegate method
+    // Hold for stretch goal
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = Model.shared.item(at: indexPath.row)
-        let message = "You selected \(item)"
-        present(UIAlertController.message(message), animated: true, completion: nil)
-    }
-    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let item = Model.shared.item(at: indexPath.row)
+//        let message = "You selected \(item)"
+//        present(UIAlertController.message(message), animated: true, completion: nil)
+//    }
+//
     
 }
 

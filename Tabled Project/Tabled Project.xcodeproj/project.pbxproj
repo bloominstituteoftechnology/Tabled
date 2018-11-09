@@ -56,9 +56,9 @@
 		2C6A16A92194F10D004D8698 /* Tabled Project */ = {
 			isa = PBXGroup;
 			children = (
+				2C6A16BC2194F3B0004D8698 /* Model.swift */,
 				2C6A16AA2194F10D004D8698 /* AppDelegate.swift */,
 				2C6A16AC2194F10D004D8698 /* ViewController.swift */,
-				2C6A16BC2194F3B0004D8698 /* Model.swift */,
 				2C6A16AE2194F10D004D8698 /* Main.storyboard */,
 				2C6A16B12194F11B004D8698 /* Assets.xcassets */,
 				2C6A16B32194F11B004D8698 /* LaunchScreen.storyboard */,

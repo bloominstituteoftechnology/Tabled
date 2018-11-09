@@ -1,9 +1,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
+class ViewController: UIViewController, UIActivityItemSource, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -14,6 +12,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Model.shared.addItem(text) // add to the model
         textField.text = nil // remove the entry from the text field
         tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)
+    }
+    
+    // Share data
+    @IBAction func share(_ sender: Any) {
+        
+        var items: String = ""
+        for item in 0..<(Model.shared.itemCount()-1){
+            items += "\(Model.shared.item(at:item)) ,"
+        }
+        items += " \(Model.shared.item(at: Model.shared.itemCount()-1))"
+        let list = [items]
+        
+        let ac = UIActivityViewController(activityItems: list, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     let reuseIdentifier = "cell"
@@ -75,6 +87,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func stopEditingTable(_ sender: Any) {
         tableView.setEditing(false, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+    }
+    
+    
+    
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return "The pig is in the poke"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        return "The pig is in the pot"
     }
     
 }

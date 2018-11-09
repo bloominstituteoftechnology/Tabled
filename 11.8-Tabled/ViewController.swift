@@ -39,9 +39,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Enable "magic" swipe-to-delete
         guard editingStyle == .delete else { return }
-        Model.shared.removeItem(at: indexPath.row)
+        Model.shared.removeValue(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .fade)
-        // Implement here
+       
     }
 
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

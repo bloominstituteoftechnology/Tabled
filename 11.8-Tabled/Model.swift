@@ -7,11 +7,13 @@ class Model {
     private var items: [String] = []
     
     func addItem(_ item: String) {
-        // fill this in
+        items.append(item)
+        saveData()
     }
     
-    func removeItem(at index: Int) {
-        // fill this in
+    func removeValue(at index: Int) {
+        items.remove(at: index)
+        saveData()
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {

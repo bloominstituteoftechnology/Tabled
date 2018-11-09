@@ -9,14 +9,18 @@ class Model {
     
     func addItem(_ item: String) {
         items.append(item)
+        saveData()
     }
     
     func removeItem(at index: Int) {
-        // fill this in
+        items.remove(at: index)
+        saveData()
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
-        // fill this in
+        let item = items.remove(at: index)
+        items.insert(item, at: index)
+        saveData()
     }
     
     func itemCount() -> Int {

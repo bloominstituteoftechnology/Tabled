@@ -45,9 +45,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    //    Model.shared.moveItem(at: sourceIndexPath.row, to: destinationIndexPath.row)
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
         tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
-        
         }
     
     @IBAction func editTable(_ sender: Any) {

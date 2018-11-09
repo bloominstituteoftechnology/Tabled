@@ -17,7 +17,9 @@ class Model {
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
-        // fill this in
+        let item = items.remove(at: index)
+        items.insert(item, at: destinationIndex)
+        saveData()
     }
     
     func itemCount() -> Int {

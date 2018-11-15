@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class Model {
@@ -7,15 +6,21 @@ class Model {
     static let shared = Model()
     private init() {}
     
-    private var items: [String] = []
+    private var items: [String] = ["dog", "cat", "hat"]
     
  
     // MARK: - DATA functions
-   
+    
+    // READ
+    
+    func item(at index: Int) -> String {
+        return items[index]
+    }
+    
     // ADD item (CREATE(
     
-    func addItem(_ newItem: String) {
-        items.append(newItem)
+    func addItem(_ item: String) {
+        items.append(item)
         saveData()
     }
     
@@ -28,7 +33,7 @@ class Model {
     
     // MOVE item
     
-    func moveItem(from index: Int, to destinationIndex: Int) {
+    func moveItem(from index: Int, to newIndex: Int) {
         let item = items.remove(at: index)
         items.insert(item, at: newIndex)
         saveData()
@@ -39,12 +44,6 @@ class Model {
     
     func itemCount() -> Int {
         return items.count
-    }
-    
-    // READ
-    
-    func item(at index: Int) -> String {
-        return items[index]
     }
     
     // File locations for saving:

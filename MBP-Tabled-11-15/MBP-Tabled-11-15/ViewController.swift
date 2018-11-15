@@ -4,6 +4,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+       
     }
     
 
@@ -17,26 +20,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // reload the table view using the reloadData method
         // clear the text field by assigning a ""
         
-        guard let newItem = textField.text, !newItem.isEmpty else { return }
+        guard let item = textField.text, !item.isEmpty else { return }
         
-        Model.shared.addItem(newItem)
+        Model.shared.addItem(item)
         tableView.reloadData()
         textField.text = ""
+        print(item)
         
     }
     
-    let reuseIdentifier = "cell"
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Model.shared.itemCount()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reuseIdentifier = "cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let item = Model.shared.item(at: indexPath.row)
         
         cell.textLabel?.text = item
-        
+        print(cell)
         return cell
     }
 

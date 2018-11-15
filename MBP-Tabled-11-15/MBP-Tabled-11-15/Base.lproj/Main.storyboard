@@ -63,6 +63,10 @@
                     <navigationItem key="navigationItem" id="D0f-Ei-n1Q">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ocT-dx-Zc5"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ul8-ZM-Ric" id="dVE-nM-uXD"/>
+                        <outlet property="textField" destination="Wdn-fZ-yM0" id="hIG-9P-GPZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

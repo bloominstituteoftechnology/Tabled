@@ -31,13 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return Model.shared.itemCount()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
-        let todoItem = Model.shared.item(at: indexPath.row)
-        cell.textLabel?.text = todoItem
-        return cell
-    }
-    
+    //Setting the viewController as dataSource and delegate to conform to UITableViewDataSource and UITableViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.dataSource = self
@@ -45,6 +39,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.reloadData()
     }
     
+    //Get the item at the specified index
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let todoItem = Model.shared.item(at: indexPath.row)
+        cell.textLabel?.text = todoItem
+        return cell
+    }
+    
+    //Enabled swipe to delete functionality
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //Make sure we are using the delete editing style
         guard editingStyle == .delete else {return}
@@ -53,6 +56,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Now we need to update the tableview
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
+    
+    
 
 }
 

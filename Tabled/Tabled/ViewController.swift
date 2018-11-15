@@ -60,11 +60,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-        tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
+       // tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
     }
     
     @IBAction func editTable(_ sender: Any) {
-        setEditing(true, animated: true)
+        tableView.setEditing(true, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
     }
     

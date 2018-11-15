@@ -17,8 +17,8 @@ class Model {
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
-        let move = items.remove(at: index)
-        items.insert(move, at: destinationIndex)
+        let item = items.remove(at: index)
+        items.insert(item, at: destinationIndex)
         saveData()
     }
     
@@ -40,8 +40,8 @@ class Model {
     }
     
     func loadData() {
-        if let loadItems = NSArray(contentsOf: fileURL) as? [String] {
-            items = loadItems
+        if let items = NSArray(contentsOf: fileURL) as? [String] {
+            self.items = items
         }
     }
 }

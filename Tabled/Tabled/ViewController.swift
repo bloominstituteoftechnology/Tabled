@@ -76,6 +76,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             print("Why are you shaking me?")
+            // undo most recent add
+            //Model.shared.item.removeLast()
+          
+              tableView.reloadData()
         }
     }
 }

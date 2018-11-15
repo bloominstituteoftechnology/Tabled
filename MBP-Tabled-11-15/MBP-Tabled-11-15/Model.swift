@@ -14,8 +14,8 @@ class Model {
    
     // ADD item (CREATE(
     
-    func addItem(_ item: String) {
-        items.append(item)
+    func addItem(_ newItem: String) {
+        items.append(newItem)
         saveData()
     }
     

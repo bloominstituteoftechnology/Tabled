@@ -30,6 +30,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mF9-aR-keM">
                                         <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWn-tx-Z1m"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -37,7 +40,7 @@
                                 <rect key="frame" x="8" y="122" width="359" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableCell" id="zIE-Ds-Vy3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="zIE-Ds-Vy3">
                                         <rect key="frame" x="0.0" y="28" width="359" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zIE-Ds-Vy3" id="W76-hd-6kW">
@@ -61,8 +64,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="TU3-bh-bgd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Eep-dF-s9q"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Eep-dF-s9q">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="ZLJ-kB-66T"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="qU0-cT-fnR" id="TX5-te-fuD"/>
+                        <outlet property="textField" destination="miG-KJ-3lJ" id="yxA-Ck-7rr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

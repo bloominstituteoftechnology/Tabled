@@ -19,31 +19,34 @@ class Model {
     
     func addItem(_ item: String) {
         items.append(item)
+        saveData()
     }
     
     func removeItem(at index: Int) {
         items.remove(at: index)
+        saveData()
     }
     
-    func moveItem(at index: Int, to newIndex: Int) {
+    func moveItem(from index: Int, to newIndex: Int) {
         let item = items.remove(at: index)
         items.insert(item, at: index)
+        saveData()
     }
     
     
     
     let fileURL = URL(fileURLWithPath: NSHomeDirectory())
         .appendingPathComponent("Library")
-        .appendingPathComponent("Animals")
+        .appendingPathComponent("ToDo")
         .appendingPathExtension("plist")
  
     func saveData() {
-        try! (values as NSArray).write(to: fileURL) // this is generally bad
+        try! (items as NSArray).write(to: fileURL)
     }
     
     func loadData() {
-        if let items = NSArray(contentsOf: fileURL) as? [String] {
-            values = items
+        if let values = NSArray(contentsOf: fileURL) as? [String] {
+            items = values
         }
     }
     

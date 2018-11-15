@@ -12,22 +12,26 @@ class Model {
  
     // MARK: - DATA functions
    
-    // ADD item
+    // ADD item (CREATE(
     
     func addItem(_ item: String) {
-        
-        
+        items.append(item)
+        saveData()
     }
     
     // REMOVE Item
     
     func removeItem(at index: Int) {
-        
+        items.remove(at: index)
+        saveData()
     }
     
     // MOVE item
     
     func moveItem(from index: Int, to destinationIndex: Int) {
+        let item = items.remove(at: index)
+        items.insert(item, at: newIndex)
+        saveData()
         
     }
     

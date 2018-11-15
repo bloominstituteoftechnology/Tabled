@@ -40,13 +40,13 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="add:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="WT9-YA-tP6"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ek-vY-9Ut">
                                         <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Gi-sG-u9V"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -72,7 +72,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="SaX-ud-dwH" id="YUq-JU-ZNi"/>
-                        <outlet property="textField" destination="scG-jC-cWJ" id="fb3-I3-6Ar"/>
+                        <outlet property="textField" destination="scG-jC-cWJ" id="O0R-8l-wMs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -7,7 +7,41 @@ class Model {
     private var items: [String] = []
     
     func addItem(_ item: String) {
-        
+        items.append(item)
+        saveData()
     }
     
+    func removeItem(at index: Int) {
+        items.remove(at: index)
+        saveData()
+    }
+    
+    func moveItem(from index: Int, to destinationIndex: Int) {
+        let move = items.remove(at: index)
+        items.insert(move, at: destinationIndex)
+        saveData()
+    }
+    
+    func itemCount() -> Int {
+        return items.count
+    }
+    
+    func item(at index: Int) -> String {
+        return items[index]
+    }
+    
+    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
+        .appendingPathComponent("Library")
+        .appendingPathComponent("ToDo")
+        .appendingPathExtension("plist")
+    
+    func saveData() {
+        try! (items as NSArray).write(to: fileURL)
+    }
+    
+    func loadData() {
+        if let loadItems = NSArray(contentsOf: fileURL) as? [String] {
+            items = loadItems
+        }
+    }
 }

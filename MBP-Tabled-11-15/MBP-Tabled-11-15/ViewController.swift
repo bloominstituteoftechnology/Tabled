@@ -43,7 +43,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let item = Model.shared.item(at: indexPath.row)
         
         cell.textLabel?.text = item
-        print(cell)
         return cell
     }
 
@@ -65,10 +64,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
     }
+    
+    @IBAction func editTable(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+        navigationItem.rightBarButtonItem = doneButton
+        
+    }
+    
+    @objc func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+        navigationItem.rightBarButtonItem = editButton
+    
         
 
 }
     
-    
+}
 
 

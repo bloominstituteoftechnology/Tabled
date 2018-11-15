@@ -6,7 +6,7 @@ class Model {
     static let shared = Model()
     private init() {}
     
-    private var items: [String] = ["dog", "cat", "hat"]
+    private var items: [String] = []
     
  
     // MARK: - DATA functions

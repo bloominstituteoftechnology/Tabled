@@ -19,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qfh-Yn-fvH">
-                                <rect key="frame" x="20" y="72" width="347" height="30"/>
+                                <rect key="frame" x="20" y="84" width="335" height="30"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To-Do Item..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GeR-hd-uqe">
-                                        <rect key="frame" x="0.0" y="0.0" width="309" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To Do Item..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GeR-hd-uqe">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTx-VT-IAp">
-                                        <rect key="frame" x="317" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="305" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtA-D8-bvd"/>
@@ -37,7 +37,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HGo-s8-7oY">
-                                <rect key="frame" x="8" y="122" width="359" height="537"/>
+                                <rect key="frame" x="8" y="134" width="359" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="f6q-Gl-rfv">
@@ -56,19 +56,20 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qfh-Yn-fvH" secondAttribute="trailing" constant="20" id="6b6-Rs-5BS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HGo-s8-7oY" secondAttribute="bottom" constant="8" id="C62-ia-6MS"/>
                             <constraint firstItem="Qfh-Yn-fvH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Gze-sP-Rpl"/>
-                            <constraint firstItem="Qfh-Yn-fvH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="HeT-M0-3PA"/>
-                            <constraint firstItem="HGo-s8-7oY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NaQ-M2-ndY"/>
-                            <constraint firstItem="Qfh-Yn-fvH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Sdu-Gc-rrY"/>
                             <constraint firstItem="HGo-s8-7oY" firstAttribute="top" secondItem="Qfh-Yn-fvH" secondAttribute="bottom" constant="20" id="XjW-0C-cuF"/>
-                            <constraint firstItem="HGo-s8-7oY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eGc-zD-MTp"/>
                             <constraint firstItem="HGo-s8-7oY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="jJm-nA-Zyd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qfh-Yn-fvH" secondAttribute="trailing" constant="8" id="psz-PU-Rgb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HGo-s8-7oY" secondAttribute="trailing" constant="8" id="sJB-wU-jIz"/>
                             <constraint firstItem="Qfh-Yn-fvH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="taa-re-vLZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NA0-mC-icS"/>
+                    <navigationItem key="navigationItem" id="NA0-mC-icS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="jbn-gd-jCc">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="WmE-oz-e0S"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="HGo-s8-7oY" id="EEK-3f-Uae"/>
                         <outlet property="textField" destination="GeR-hd-uqe" id="BS5-Ms-d26"/>

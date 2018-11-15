@@ -21,11 +21,13 @@ class Model {
     // add item to items array
     func addItem(_ item: String) {
         items.append(item)
+        saveData()
     }
     
     // remove item from array
     func removeItem(at index: Int) {
         items.remove(at: index)
+        saveData()
     }
     
     // move items around in the array
@@ -35,6 +37,7 @@ class Model {
         
         // insert item to new index
         items.insert(item, at: destinationIndex)
+        saveData()
     }
     
     // count and return the number of items

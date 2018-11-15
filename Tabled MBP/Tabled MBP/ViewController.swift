@@ -21,6 +21,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // apply insert row animation
         tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .top)
         
+        // update the tableView with the new item
+        tableView.reloadData()
+        
         // remove entered text from the text field so that a new item can be entered
         textField.text = ""
     }
@@ -90,6 +93,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // update the table view
         tableView.moveRow(at: sourceIndexPath, to: destinationIndexPath)
+    }
+    
+    // MARK: - Interactive Edits
+    // editing mode
+    @IBAction func editTable(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        
+        // connect function
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+        
+        navigationItem.rightBarButtonItem = doneButton
+    }
+    
+    // stops editing mode
+    @objc func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        
+        // connect function
+        let editButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+        
+        navigationItem.rightBarButtonItem = editButton
+        
     }
     
     

@@ -30,6 +30,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJm-1t-FFZ">
                                         <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSs-7H-Trb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,8 +64,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ujd-Uk-Qcf">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="tVc-9F-Brz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="tVc-9F-Brz">
+                            <connections>
+                                <action selector="editTableView:" destination="BYZ-38-t0r" id="ZFk-D7-IIP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cqt-9e-KnH" id="fxw-u2-4Pj"/>
+                        <outlet property="textField" destination="Pya-Dm-W4T" id="SeD-5p-2AY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

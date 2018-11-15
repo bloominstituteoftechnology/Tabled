@@ -12,6 +12,7 @@
 		F30F357D219E0DC400F68A97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30F357B219E0DC400F68A97 /* Main.storyboard */; };
 		F30F357F219E0DC500F68A97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30F357E219E0DC500F68A97 /* Assets.xcassets */; };
 		F30F3582219E0DC500F68A97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30F3580219E0DC500F68A97 /* LaunchScreen.storyboard */; };
+		F30F358A219E110E00F68A97 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F3589219E110E00F68A97 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F30F357E219E0DC500F68A97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30F3581219E0DC500F68A97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F30F3583219E0DC500F68A97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F30F3589219E110E00F68A97 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				F30F3577219E0DC400F68A97 /* AppDelegate.swift */,
 				F30F3579219E0DC400F68A97 /* ViewController.swift */,
+				F30F3589219E110E00F68A97 /* Model.swift */,
 				F30F357B219E0DC400F68A97 /* Main.storyboard */,
 				F30F357E219E0DC500F68A97 /* Assets.xcassets */,
 				F30F3580219E0DC500F68A97 /* LaunchScreen.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30F358A219E110E00F68A97 /* Model.swift in Sources */,
 				F30F357A219E0DC400F68A97 /* ViewController.swift in Sources */,
 				F30F3578219E0DC400F68A97 /* AppDelegate.swift in Sources */,
 			);

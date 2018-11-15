@@ -1,18 +1,23 @@
-//
-//  ViewController.swift
-//  MBP Tabled Project
-//
-//  Created by Meera Andersen on 11/15/18.
-//  Copyright © 2018 Meera Andersen. All rights reserved.
-//
 
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func add(_ sender: Any) {
+        
+    }
+    
+    @IBAction func editTableView(_ sender: Any) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
 

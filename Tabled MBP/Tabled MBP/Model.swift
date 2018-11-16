@@ -50,6 +50,11 @@ class Model {
         return items[index]
     }
     
+    // return the array of items in order to share them
+    func shareItems() -> [String] {
+        return items
+    }
+    
     // saving location - creates the URL
     let fileURL = URL(fileURLWithPath: NSHomeDirectory())
         .appendingPathComponent("Library")

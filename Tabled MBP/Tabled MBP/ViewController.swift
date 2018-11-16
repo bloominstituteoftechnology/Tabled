@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
     @IBOutlet weak var textField: UITextField!
@@ -117,6 +117,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    
+    // Add an Activity Controller
+    @IBAction func shareButton(_ sender: UIBarButtonItem) {
+        
+        let activityVC = UIActivityViewController(activityItems: Model.shared.shareItems(), applicationActivities: nil)
+        
+        activityVC.setValue("Your email Subject", forKey: "subject")
+        
+        //activityVC.popoverPresentationController?.sourceView = self.view
+        
+        present(activityVC, animated: true, completion: nil)
+        
+    }
     
 }
 

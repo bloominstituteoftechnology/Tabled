@@ -64,11 +64,18 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="NA0-mC-icS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="jbn-gd-jCc">
-                            <connections>
-                                <action selector="editTable:" destination="BYZ-38-t0r" id="WmE-oz-e0S"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="jbn-gd-jCc">
+                                <connections>
+                                    <action selector="editTable:" destination="BYZ-38-t0r" id="WmE-oz-e0S"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Share" id="y2X-zE-FHc">
+                                <connections>
+                                    <action selector="shareButton:" destination="BYZ-38-t0r" id="wjZ-0y-UaR"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="HGo-s8-7oY" id="EEK-3f-Uae"/>

@@ -29,7 +29,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func add(_ sender: UIButton) {
         guard let text = textField.text, !text.isEmpty else { return }
         Model.shared.addItem(text)
-        print(Model.shared.item(at: 0))
         tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount()-1, section: 0)], with: .right)
         textField.text = nil
         tableView.reloadData()
@@ -39,6 +38,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        
+        Model.shared.removeItem(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
     let reuseIdentifier = "cell"

@@ -13,10 +13,14 @@ class Model {
     static let shared = Model()
     private init() {}
     
-    private var items: [String] = []
+    private(set) var items: [String] = []
+    private(set) var list = [List]()
     
     func addItem(_ item: String) {
         // fill this in
+       let listItem = List(title: item)
+        items.append(listItem.title)
+   
     }
     
     func removeItem(at index: Int) {
@@ -44,9 +48,9 @@ class Model {
         try! (items as NSArray).write(to: fileURL)
     }
     
-    func loadData() {
-        if let items = NSArray(contentsOf: fileURL) as? [String] {
-            items = items
-        }
-    }
+//    func loadData() {
+//        if let items = NSArray(contentsOf: fileURL) as? [String] {
+//            items = items
+//        }
+//    }
 }

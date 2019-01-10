@@ -53,11 +53,23 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
-        let list = Model.shared.items[indexPath.row]
+        let items = Model.shared.items[indexPath.row]
         
-        cell.textLabel?.text = list
+        cell.textLabel?.text = items
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Enable "magic" swipe-to-delete
+        guard editingStyle == .delete else { return }
+        
+        // Implement here
+        
+        
+        Model.shared.removeItem(at: indexPath.row)
+        tableView.reloadData()
     }
     
     

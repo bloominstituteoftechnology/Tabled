@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(true)
         tableView.dataSource = self
         tableView.delegate = self
+       tableView.isEditing = true
     }
 
 
@@ -70,6 +71,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         Model.shared.removeItem(at: indexPath.row)
         tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        // Implement here
+    
+        let item = Model.shared.items[sourceIndexPath.row]
+        
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row, stringValue: item)
+        
+       
     }
     
     

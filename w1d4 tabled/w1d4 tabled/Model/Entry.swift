@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Entry {
+struct Entry : Equatable {
     //struct
     var text : String
 }

@@ -40,6 +40,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = Model.shared.item(at: indexPath.row)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Enable "magic" swipe-to-delete
+        guard editingStyle == .delete else { return }
+        
+        Model.shared.removeItem(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    // row-reordering
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
+    
 
     @IBOutlet weak var textField: UITextField!
     

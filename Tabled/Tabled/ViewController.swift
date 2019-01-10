@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Tabled
-//
-//  Created by Lambda_School_Loaner_18 on 1/10/19.
-//  Copyright © 2019 SeanDoyle. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {

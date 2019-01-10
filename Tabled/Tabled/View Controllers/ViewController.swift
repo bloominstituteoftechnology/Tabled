@@ -25,6 +25,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     
+    @IBAction func edit(_ sender: UIBarButtonItem) {
+        self.tableView.isEditing = !self.tableView.isEditing
+        sender.title = self.tableView.isEditing ? "Done" : "Edit"
+    }
     
     @IBAction func add(_ sender: UIButton) {
         guard let text = textField.text, !text.isEmpty else { return }
@@ -45,6 +49,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         Model.shared.removeItem(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
     let reuseIdentifier = "cell"

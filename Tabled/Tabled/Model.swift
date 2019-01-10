@@ -8,44 +8,47 @@
 
 import Foundation
 
+var itemsArray : [String] = []
+
 class Model {
     static let shared = Model()
     private init() {}
     
-    private var items: [String] = []
     
     func addItem(_ item: String) {
-        // fill this in
+        itemsArray.append(item)
     }
     
     func removeItem(at index: Int) {
-        // fill this in
+        itemsArray.remove(at: index)
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
-        // fill this in
+        let heldString : String = itemsArray[index]
+        itemsArray[destinationIndex] = itemsArray[index]
+        itemsArray[index] = heldString
     }
     
     func itemCount() -> Int {
-        return items.count
+        if(itemsArray.count != 0){
+        return itemsArray.count
+        }else{
+            return 0
+        }
     }
     
     func item(at index: Int) -> String {
-        return items[index]
+        return itemsArray[index]
     }
     
-    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
-        .appendingPathComponent("Library")
-        .appendingPathComponent("ToDo")
-        .appendingPathExtension("plist")
-    
-    func saveData() {
-        try! (items as NSArray).write(to: fileURL)
+    func saveData(array : [String]) {
+        UserDefaults.standard.set(itemsArray, forKey: "ArraySave")
     }
     
     func loadData() {
-        if let items = NSArray(contentsOf: fileURL) as? [String] {
-            
+        let nilCheck = UserDefaults.standard.stringArray(forKey: "ArraySave")
+        if(nilCheck != nil){
+            itemsArray = UserDefaults.standard.stringArray(forKey: "ArraySave")!
         }
     }
 }

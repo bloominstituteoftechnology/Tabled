@@ -2,21 +2,30 @@
 //  ViewController.swift
 //  Tabled
 //
-//  Created by Cameron Dunn on 1/10/19.
+//  Created by Ilgar Ilyasov on 1/10/19.
 //  Copyright © 2019 Cameron Dunn. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UITableViewController {
-    @IBOutlet weak var textField : UITextField!
-    let itemDict : [String : Int] = [:]
-    let reuseIdentifier : String = "cell"
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    let reuseIdentifier: String = "cell"
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        Model.shared.loadData()
+        tableView.reloadData()
+    }
     
     @IBAction func add(_ sender: Any) {
         if(textField.text != nil && !textField.text!.isEmpty && textField.text != " " && !textField.text!.contains("  ")){
             Model.shared.addItem(textField.text!)
+            textField.text = ""
             tableView.reloadData()
         }else{
             let alert = UIAlertController(title: "Error", message: "Item cannot be blank and/or contain more than two spaces in a row.", preferredStyle: .alert)
@@ -24,20 +33,25 @@ class ViewController: UITableViewController {
             self.present(alert, animated: true)
         }
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Model.shared.itemCount()
     }
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Enable "magic" swipe-to-delete
+        guard editingStyle == .delete else { return }
+        Model.shared.removeItem(at: indexPath.row)
+        tableView.reloadData()
+        
+        // Implement here
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+        cell?.textLabel?.text = itemsArray[indexPath.row]
         return cell!
     }
-    override func viewWillAppear(_ animated: Bool) {
-        //input what will happen when view will appear
-    }
-    override func viewDidLoad() {
-        //input what will happen when view is loaded
-    }
-
-
+    
 }
-

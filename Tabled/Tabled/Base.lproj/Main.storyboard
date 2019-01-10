@@ -31,7 +31,7 @@
                                         <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
-                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s46-fp-PmU"/>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KOM-8w-Rck"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -49,6 +49,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="6Zc-AT-eQL"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="czU-t4-slf"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,15 +67,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZTl-zM-Nmn"/>
+                    <navigationItem key="navigationItem" id="ZTl-zM-Nmn">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="cg6-Sa-LQA"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="jDT-nI-Sfa" id="ayF-Lb-dmM"/>
-                        <outlet property="textField" destination="Uie-KZ-iPY" id="7NV-jo-Nc3"/>
+                        <outlet property="tableView" destination="jDT-nI-Sfa" id="CgM-Yu-hPC"/>
+                        <outlet property="textField" destination="Uie-KZ-iPY" id="tXr-Vm-VyM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1150" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wzv-iu-Nk2">

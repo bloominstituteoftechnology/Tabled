@@ -75,6 +75,16 @@ class ItemTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        // Implement here
+        
+        ItemsController.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        
+        tableView.reloadData()
+   
+        
+    }
     
     
     

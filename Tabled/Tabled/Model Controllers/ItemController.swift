@@ -59,12 +59,12 @@ class ItemsController {
         try! (items as NSArray).write(to: fileURL)
     }
     
-//    func loadData() {
-//        if let items = NSArray(contentsOf: fileURL) as? [Item] {
-//            items = items
-//        }
-//    }
-//    
-//   
+    func loadData() {
+        if let items = NSArray(contentsOf: fileURL) as? [Item] {
+            self.items = items
+        }
+    }
+    
+   
  
 }

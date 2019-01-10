@@ -13,17 +13,6 @@ class ItemsController {
     private init() {}
     private(set) var items = [Item]()
     
-/*
-     Need the following functions here:
-     addItem - done
-     itemCount - done
-     removeItem - done
-     moveItem - done
-     item - done
-     
-  
-*/
-    
     func addItem(withItem item: String) {
         let item = Item(item: item)
         items.append(item)
@@ -32,14 +21,12 @@ class ItemsController {
     func removeItem(item: Item) {
         guard let index = items.index(of: item) else { return }
         items.remove(at: index)
-        
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
         // fill this in
         let item = items.remove(at: index)
         items.insert(item, at: destinationIndex)
-        
     }
     
     func itemCount() -> Int {
@@ -50,21 +37,84 @@ class ItemsController {
         return items[index]
     }
     
-    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
-        .appendingPathComponent("Library")
-        .appendingPathComponent("ToDo")
-        .appendingPathExtension("plist")
-    
-    func saveData() {
-        try! (items as NSArray).write(to: fileURL)
     }
-    
-    func loadData() {
-        if let items = NSArray(contentsOf: fileURL) as? [Item] {
-            self.items = items
-        }
-    }
-    
+
    
  
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

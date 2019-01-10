@@ -12,6 +12,7 @@
 		CA375ACD21E7E1E50028EF72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA375ACB21E7E1E50028EF72 /* Main.storyboard */; };
 		CA375ACF21E7E1E50028EF72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA375ACE21E7E1E50028EF72 /* Assets.xcassets */; };
 		CA375AD221E7E1E50028EF72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA375AD021E7E1E50028EF72 /* LaunchScreen.storyboard */; };
+		CA375ADA21E7E7CD0028EF72 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA375AD921E7E7CD0028EF72 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CA375ACE21E7E1E50028EF72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA375AD121E7E1E50028EF72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA375AD321E7E1E50028EF72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA375AD921E7E7CD0028EF72 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				CA375AC721E7E1E50028EF72 /* AppDelegate.swift */,
 				CA375AC921E7E1E50028EF72 /* ViewController.swift */,
 				CA375ACB21E7E1E50028EF72 /* Main.storyboard */,
+				CA375AD921E7E7CD0028EF72 /* Model.swift */,
 				CA375ACE21E7E1E50028EF72 /* Assets.xcassets */,
 				CA375AD021E7E1E50028EF72 /* LaunchScreen.storyboard */,
 				CA375AD321E7E1E50028EF72 /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA375ADA21E7E7CD0028EF72 /* Model.swift in Sources */,
 				CA375ACA21E7E1E50028EF72 /* ViewController.swift in Sources */,
 				CA375AC821E7E1E50028EF72 /* AppDelegate.swift in Sources */,
 			);

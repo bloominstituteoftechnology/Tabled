@@ -12,9 +12,31 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
+    let reuseIdentifier = "cell"
+    
 
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textField: UITextField!
+    @IBAction func add(_ sender: UIButton) {
+        
+        guard let text = textField.text, !text.isEmpty else { return }
+        
+        Model.shared.addItem(text)
+        
+        textField.text = nil
+        
+        tableView.reloadData()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
 

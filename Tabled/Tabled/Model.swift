@@ -44,8 +44,8 @@ class Model {
     }
     
     func loadData() {
-        if let items = NSArray(contentsOf: fileURL) as? [String] {
-            items = items
+        if let items2 = NSArray(contentsOf: fileURL) as? [String] {
+            items = items2
         }
     }
 }

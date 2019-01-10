@@ -1,0 +1,14 @@
+Jocelyn Stuart
+	•	Why use animation in the table when adding, removing, or reordering items?
+
+Animation makes it easier for the user to visualize the changes they are making, and the visualization reduces mistakes or errors made on the users part.
+
+
+	•	Why use a model? Why not just update an array of items directly in your table?
+
+Models make it easier to implement functions by keeping an organized file just for the functionalities of your table. Updating an array of items directly in the table can reduce efficiency.
+
+	•	When do you call reloadData? When don't you?
+
+You call reloadData when you want to completely reload data in the tableview. You do not call reloadData when you are inserting or deleting rows.
+

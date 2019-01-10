@@ -14,6 +14,7 @@
 		BB138E4621E7E58D003FB425 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB138E4421E7E58D003FB425 /* LaunchScreen.storyboard */; };
 		BB138E4E21E7E949003FB425 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB138E4D21E7E949003FB425 /* Model.swift */; };
 		BB138E5021E803F1003FB425 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB138E4F21E803F1003FB425 /* Item.swift */; };
+		BB138E5221E80FAC003FB425 /* Tabled_Questions.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB138E5121E80FAC003FB425 /* Tabled_Questions.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BB138E4721E7E58D003FB425 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB138E4D21E7E949003FB425 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BB138E4F21E803F1003FB425 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BB138E5121E80FAC003FB425 /* Tabled_Questions.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tabled_Questions.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				BB138E3B21E7E58A003FB425 /* AppDelegate.swift */,
+				BB138E5121E80FAC003FB425 /* Tabled_Questions.txt */,
 				BB138E3D21E7E58A003FB425 /* ViewController.swift */,
 				BB138E3F21E7E58A003FB425 /* Main.storyboard */,
 				BB138E4D21E7E949003FB425 /* Model.swift */,
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB138E5221E80FAC003FB425 /* Tabled_Questions.txt in Resources */,
 				BB138E4621E7E58D003FB425 /* LaunchScreen.storyboard in Resources */,
 				BB138E4321E7E58D003FB425 /* Assets.xcassets in Resources */,
 				BB138E4121E7E58A003FB425 /* Main.storyboard in Resources */,

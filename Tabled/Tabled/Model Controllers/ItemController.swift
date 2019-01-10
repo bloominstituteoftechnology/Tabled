@@ -60,9 +60,11 @@ class ItemsController {
     }
     
 //    func loadData() {
-//        if let items = NSArray(contentsOf: fileURL) as? [String] {
+//        if let items = NSArray(contentsOf: fileURL) as? [Item] {
 //            items = items
 //        }
 //    }
+//    
+//   
  
 }

@@ -61,8 +61,36 @@ class ItemTableViewController: UITableViewController {
     @IBOutlet weak var textField: UITextField!
     
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // Enable "magic" swipe-to-delete
+        guard editingStyle == .delete else { return }
+        
+        // Implement here
+        
+        let item = ItemsController.shared.items[indexPath.row]
+        print(item)
+        print(ItemsController.shared.items)
+        ItemsController.shared.removeItem(item: item)
+        tableView.reloadData()
+    }
     
-
+    
+    
+    
+    
+    @IBAction func editTable(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+    }
+    
+    @objc
+    func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

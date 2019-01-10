@@ -13,7 +13,11 @@ class ItemTableViewController: UITableViewController {
     let reuseIdentifier = "ItemCell"
     
     @IBAction func add(_ sender: UIButton) {
+        guard let text = textField.text, !text.isEmpty else { return }
         
+        ItemsController.shared.addItem(withItem: text)
+        textField.text = nil
+        tableView.reloadData()
         
     }
     
@@ -36,14 +40,10 @@ class ItemTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+ 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ItemsController.shared.itemCount()
     }
 
   

@@ -18,7 +18,7 @@ class ItemsController {
      addItem - done
      itemCount - done
      removeItem - done
-     moveItem - WIP
+     moveItem - done
      item - done
      
   
@@ -50,5 +50,19 @@ class ItemsController {
         return items[index]
     }
     
+    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
+        .appendingPathComponent("Library")
+        .appendingPathComponent("ToDo")
+        .appendingPathExtension("plist")
+    
+    func saveData() {
+        try! (items as NSArray).write(to: fileURL)
+    }
+    
+//    func loadData() {
+//        if let items = NSArray(contentsOf: fileURL) as? [String] {
+//            items = items
+//        }
+//    }
  
 }

@@ -7,3 +7,29 @@
 //
 
 import Foundation
+
+class ItemsController {
+    static let shared = ItemsController()
+    private init() {}
+    private(set) var items = [Item]()
+    
+/*
+     Need the following functions here:
+     addItem - done
+     itemCount
+     removeItem -
+     moveItem
+
+     item
+     
+  
+*/
+    
+    func addItem(withItem item: String) {
+        let item = Item(item: item)
+        items.append(item)
+    }
+    
+     
+ 
+}

@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.dataSource = self
         tableView.reloadData()
+        Model.shared.loadData()
     }
     
     @IBOutlet weak var textField: UITextField!
@@ -28,7 +29,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func add(_ sender: Any) {
         guard let text = textField.text, !text.isEmpty else { return }
         Model.shared.addItem(text)
-        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount(), section: 0)], with: .fade)
+        tableView.insertRows(at: [IndexPath(row: Model.shared.itemCount() - 1, section: 0)], with: .fade)
+        textField.text = ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

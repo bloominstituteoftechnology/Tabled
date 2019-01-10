@@ -68,7 +68,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZTl-zM-Nmn">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="cg6-Sa-LQA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="cg6-Sa-LQA">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="UBf-A4-aIM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jDT-nI-Sfa" id="CgM-Yu-hPC"/>

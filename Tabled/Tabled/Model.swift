@@ -24,7 +24,7 @@ class Model {
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
-        let heldString : String = itemsArray[index]
+        let heldString : String = itemsArray[destinationIndex]
         itemsArray[destinationIndex] = itemsArray[index]
         itemsArray[index] = heldString
     }

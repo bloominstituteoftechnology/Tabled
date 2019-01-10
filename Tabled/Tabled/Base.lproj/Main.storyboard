@@ -54,7 +54,13 @@
                             <outlet property="delegate" destination="yqR-aE-5K1" id="5yl-f6-tPa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FyP-da-d15"/>
+                    <navigationItem key="navigationItem" id="FyP-da-d15">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="JXl-L8-81r">
+                            <connections>
+                                <action selector="startEditing:" destination="yqR-aE-5K1" id="fYa-Oi-0Yn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableViewOutlet" destination="svo-kF-EXu" id="S8o-tD-7VZ"/>
                         <outlet property="textFieldOutlet" destination="7wN-UW-OAH" id="adQ-6G-GR2"/>

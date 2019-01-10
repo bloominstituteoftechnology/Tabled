@@ -8,14 +8,18 @@ class Model {
     
     func addItem(_ item: String) {
         items.append(item)
+        saveData()
     }
     
     func removeItem(at index: Int) {
         items.remove(at: index)
+        saveData()
     }
     
     func moveItem(from index: Int, to destinationIndex: Int) {
-        // fill this in
+        let value = items.remove(at: index)
+        items.insert(value, at: index)
+        saveData()
     }
     
     func itemCount() -> Int {
@@ -37,7 +41,7 @@ class Model {
     
     func loadData() {
         if let items = NSArray(contentsOf: fileURL) as? [String] {
-        //    items = items
+              self.items = items
         }
     }
 }

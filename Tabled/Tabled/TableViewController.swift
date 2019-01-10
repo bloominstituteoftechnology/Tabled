@@ -13,9 +13,33 @@ class TableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func startEditing(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+    }
+    
+    @objc
+    func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(startEditing(_:)))
+    }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let item = Model.shared.item(at: indexPath.row)
+//        let message = "You selected \(item)"
+//        present(UIAlertController.message(message), animated: true, completion: nil)
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      //  self.tableView.isEditing = true
+        tableView.reloadData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.delegate = self
+        tableView.dataSource = self
         tableView.reloadData()
     }
 
@@ -36,28 +60,23 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    /*
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
             Model.shared.removeItem(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-     //       tableView.reloadData()
+            tableView.reloadData()
     }
     
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        Model.shared.moveItem(from: fromIndexPath.row, to: destinationIndexPath.row)
+        tableView.moveRow(at: fromIndexPath, to: destinationIndexPath)
     }
-    
 
     /*
     // Override to support conditional rearranging of the table view.

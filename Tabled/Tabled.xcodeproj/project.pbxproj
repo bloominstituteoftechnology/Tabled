@@ -12,6 +12,7 @@
 		A218A0F021E7DED700C40C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A218A0EE21E7DED700C40C9E /* Main.storyboard */; };
 		A218A0F221E7DED900C40C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A218A0F121E7DED900C40C9E /* Assets.xcassets */; };
 		A218A0F521E7DED900C40C9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A218A0F321E7DED900C40C9E /* LaunchScreen.storyboard */; };
+		A218A0FE21E7E28800C40C9E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218A0FD21E7E28800C40C9E /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		A218A0F121E7DED900C40C9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A218A0F421E7DED900C40C9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A218A0F621E7DED900C40C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A218A0FD21E7E28800C40C9E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				A218A0EA21E7DED700C40C9E /* AppDelegate.swift */,
 				A218A0FC21E7E25100C40C9E /* View Controllers */,
+				A218A0FD21E7E28800C40C9E /* Model.swift */,
 				A218A0EE21E7DED700C40C9E /* Main.storyboard */,
 				A218A0F121E7DED900C40C9E /* Assets.xcassets */,
 				A218A0F321E7DED900C40C9E /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A218A0FE21E7E28800C40C9E /* Model.swift in Sources */,
 				A218A0ED21E7DED700C40C9E /* ViewController.swift in Sources */,
 				A218A0EB21E7DED700C40C9E /* AppDelegate.swift in Sources */,
 			);

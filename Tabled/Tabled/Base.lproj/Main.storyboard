@@ -31,6 +31,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zGc-nM-rUq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eWn-u4-rYc"/>
+                                </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hIU-bY-N3Q">
                                 <rect key="frame" x="8" y="72" width="359" height="30"/>

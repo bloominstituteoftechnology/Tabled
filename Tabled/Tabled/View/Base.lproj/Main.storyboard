@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9U3-1r-Adz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-689" y="134"/>
+            <point key="canvasLocation" x="-724" y="27"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -79,7 +79,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O4w-0i-FVT"/>
+                    <navigationItem key="navigationItem" id="O4w-0i-FVT">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="uRC-As-SWI">
+                            <connections>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="i6I-u4-4ys"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CgW-tF-n5O" id="9lQ-PZ-sMm"/>
                         <outlet property="textField" destination="Q8h-Ng-lIx" id="ibx-nn-PSC"/>

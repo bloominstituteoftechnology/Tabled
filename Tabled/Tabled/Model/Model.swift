@@ -34,18 +34,6 @@ class Model {
         return items[index]
     }
     
-    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
-        .appendingPathComponent("Library")
-        .appendingPathComponent("ToDo")
-        .appendingPathExtension("plist")
-    
-    func saveData() {
-        try! (items as NSArray).write(to: fileURL)
-    }
-    
-    func loadData() {
-        if let items2 = NSArray(contentsOf: fileURL) as? [String] {
-            items = items2
-        }
-    }
 }
+
+

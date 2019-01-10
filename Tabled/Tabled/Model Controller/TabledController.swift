@@ -14,7 +14,6 @@ class TabledController {
     private init() {}
     
     
-    
     func createLabel(withText text: String) {
         let table = Table(text: text, timestamp: Date())
         tabled.append(table)
@@ -28,6 +27,6 @@ class TabledController {
         tabled.remove(at: index)
     }
     
-    private(set) var tabled = [Table]()
+    var tabled = [Table]()
     
 }

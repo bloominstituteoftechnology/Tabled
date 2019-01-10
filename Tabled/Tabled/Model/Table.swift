@@ -14,3 +14,4 @@ struct Table: Equatable {
     var timestamp: Date
     
 }
+

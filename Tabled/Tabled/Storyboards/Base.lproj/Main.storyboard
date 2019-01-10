@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Item Table View Controller-->
         <scene sceneID="eu2-RQ-d18">
             <objects>
-                <tableViewController id="yLp-12-yWY" sceneMemberID="viewController">
+                <tableViewController id="yLp-12-yWY" customClass="ItemTableViewController" customModule="Tabled" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="W3O-GK-gLO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyI-n5-9Ro">
                                             <rect key="frame" x="329" y="0.0" width="30" height="64"/>
                                             <state key="normal" title="Add"/>
+                                            <connections>
+                                                <action selector="add:" destination="yLp-12-yWY" eventType="touchUpInside" id="nUB-uu-KCC"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -60,6 +63,9 @@
                             <outlet property="delegate" destination="yLp-12-yWY" id="ch5-nB-SbT"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="textField" destination="q8L-R1-pCc" id="3Ou-PL-OzH"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tm9-id-yaA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

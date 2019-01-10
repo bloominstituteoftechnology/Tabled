@@ -16,11 +16,10 @@ class ItemsController {
 /*
      Need the following functions here:
      addItem - done
-     itemCount
-     removeItem -
-     moveItem
-
-     item
+     itemCount - done
+     removeItem - done
+     moveItem - WIP
+     item - done
      
   
 */
@@ -44,8 +43,9 @@ class ItemsController {
         return items.count
     }
     
-    func item(at index: Int) -> String {
+    func itemAtIndex(_ index: Int) -> Item {
         return items[index]
     }
+    
  
 }

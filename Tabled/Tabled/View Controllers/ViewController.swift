@@ -25,9 +25,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     
-    @IBAction func edit(_ sender: UIBarButtonItem) {
-        self.tableView.isEditing = !self.tableView.isEditing
-        sender.title = self.tableView.isEditing ? "Done" : "Edit"
+    @IBAction func editTable(_ sender: UIBarButtonItem) {
+//        self.tableView.isEditing = !self.tableView.isEditing  // Simple Edit implementation
+//        sender.title = self.tableView.isEditing ? "Done" : "Edit"
+        tableView.setEditing(true, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+    }
+    @objc
+    func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
     }
     
     @IBAction func add(_ sender: UIButton) {

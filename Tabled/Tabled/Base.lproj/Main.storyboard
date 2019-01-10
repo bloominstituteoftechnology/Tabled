@@ -70,7 +70,7 @@
                     <navigationItem key="navigationItem" id="WI0-17-FiI">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="Tww-z5-yhT">
                             <connections>
-                                <action selector="edit:" destination="BYZ-38-t0r" id="B3g-Vc-REI"/>
+                                <action selector="editTable:" destination="BYZ-38-t0r" id="B3g-Vc-REI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

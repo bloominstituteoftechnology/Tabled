@@ -10,7 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textField: UITextField!
     
-
+    var reuseIdentifier = "cell"
+    
+    @IBAction func add(_ sender: Any) {
+    }
+    
+    
+    
+    
+    
 }
 

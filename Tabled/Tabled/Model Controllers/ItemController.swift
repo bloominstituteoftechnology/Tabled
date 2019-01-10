@@ -30,6 +30,22 @@ class ItemsController {
         items.append(item)
     }
     
-     
+    func removeItem(item: Item) {
+        guard let index = items.index(of: item) else { return }
+        items.remove(at: index)
+        
+    }
+    
+    func moveItem(from index: Int, to destinationIndex: Int) {
+        // fill this in
+    }
+    
+    func itemCount() -> Int {
+        return items.count
+    }
+    
+    func item(at index: Int) -> String {
+        return items[index]
+    }
  
 }

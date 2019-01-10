@@ -12,7 +12,7 @@ class Model {
     static let shared = Model()
     private init() {}
     
-    private var items: [String] = []
+    var items: [String] = []
     
     func addItem(_ item: String) {
         Model.shared.items.append(item)
@@ -35,18 +35,4 @@ class Model {
         return items[index]
     }
     
-    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
-        .appendingPathComponent("Library")
-        .appendingPathComponent("ToDo")
-        .appendingPathExtension("plist")
-    
-    func saveData() {
-        try! (items as NSArray).write(to: fileURL)
-    }
-    
-    func loadData() {
-        if let itemz = NSArray(contentsOf: fileURL) as? [String] {
-            items = itemz
-        }
-    }
 }

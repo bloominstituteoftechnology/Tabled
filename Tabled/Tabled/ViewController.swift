@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             Model.shared.addItem(textField.text!)
             textField.text = ""
             tableView.reloadData()
+            Model.shared.saveData(array: itemsArray)
         }else{
             let alert = UIAlertController(title: "Error", message: "Item cannot be blank and/or contain more than two spaces in a row.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default))

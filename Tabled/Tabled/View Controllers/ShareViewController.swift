@@ -44,7 +44,7 @@ class ShareViewController: UIViewController, MFMailComposeViewControllerDelegate
             
             present(mail, animated: true)
         } else {
-            // show failure alert
+           print("// show failure alert")
         }
     }
     

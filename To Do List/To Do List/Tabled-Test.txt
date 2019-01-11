@@ -1,0 +1,11 @@
+Q:	Why use animation in the table when adding, removing, or reordering items?
+
+A:	Animation allows us to create a pleasant experience for the user that allows for dragging and other nice features.
+
+Q:	Why use a model? Why not just update an array of items directly in your table?
+
+A:	Using a model follows the MCV method for organizing code. In this instance using a model instead of directly updating items in a table, allows us to store and save all of the items in an array, and only add or delete from it in the VC. This should allow for fast runtime.
+
+Q:	When do you call reloadData? When don't you?
+
+A:	You call reloadData in a function that updates a Table View. You wouldn't use it if you are loading a lot of data. Instead you would use a different call that only reloads specified data. This makes the app run quicker, depending on the amount of data.

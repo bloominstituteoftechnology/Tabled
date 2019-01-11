@@ -1,0 +1,8 @@
+Why use animation in the table when adding, removing, or reordering items?
+It makes it visually easy for user to understand what they are doing.
+
+Why use a model? Why not just update an array of items directly in your table?
+To follow model, view controller, but also, to keep data organized for editing later on by oneself, or colleagues.
+
+When do you call reloadData? When don't you?
+You call reloadData when you want the table view to update and show new data.  You don't do this when you don't want to reload data.

@@ -34,16 +34,36 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
-        let item = Int(Model.shared.item(at: indexPath.row))
+        let index = indexPath.row
+        Model.shared.removeItem(at: index)
         
-        Model.shared.removeItem(at: item!)
         tableView.reloadData()
     }
     
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         Model.shared.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
     
+    @IBAction func add(_ sender: UIButton) {
+        guard let itemText = textField.text else { return }
+        Model.shared.addItem(itemText)
+        textField.text = nil
+        tableView.reloadData()
+    }
+    
+    @IBAction func editTable(_ sender: Any) {
+        tableView.setEditing(true, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditingTable(_:)))
+    }
+    
+    @objc
+    func stopEditingTable(_ sender: Any) {
+        tableView.setEditing(false, animated: true)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
+    }
+    
+    
+    @IBOutlet weak var textField: UITextField!
     
 
 //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

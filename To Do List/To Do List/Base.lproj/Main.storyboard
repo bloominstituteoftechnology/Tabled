@@ -33,6 +33,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-3J-jIU">
                                             <rect key="frame" x="329" y="0.0" width="30" height="30"/>
                                             <state key="normal" title="Add"/>
+                                            <connections>
+                                                <action selector="add:" destination="MRu-lY-2zf" eventType="touchUpInside" id="bU1-d1-8nF"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -60,8 +63,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="nZB-tQ-psi">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="y5E-Ao-OdV"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="y5E-Ao-OdV">
+                            <connections>
+                                <action selector="editTable:" destination="MRu-lY-2zf" id="yiA-Zh-kCh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="vjt-sw-hKn" id="dZ6-fv-A26"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRC-hw-fJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

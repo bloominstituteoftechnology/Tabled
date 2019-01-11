@@ -67,19 +67,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Share" style="done" id="Whk-56-Eff">
-                            <connections>
-                                <segue destination="IwK-3R-BSI" kind="show" id="GsY-C7-tJV"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="WI0-17-FiI">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" style="plain" id="Tww-z5-yhT">
-                            <connections>
-                                <action selector="editTable:" destination="BYZ-38-t0r" id="B3g-Vc-REI"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Edit" style="plain" id="Tww-z5-yhT">
+                                <connections>
+                                    <action selector="editTable:" destination="BYZ-38-t0r" id="B3g-Vc-REI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Share" id="oiX-r1-PY5">
+                                <connections>
+                                    <action selector="share:" destination="BYZ-38-t0r" id="GBs-Zv-Wfc"/>
+                                    <segue destination="IwK-3R-BSI" kind="show" id="yTj-0o-L4z"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -116,9 +118,13 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTP-yc-jF6">
                                         <rect key="frame" x="0.0" y="509" width="343" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Send Email">
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="send:" destination="IwK-3R-BSI" eventType="touchUpInside" id="QLy-Gg-csi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -133,7 +139,8 @@
                         <viewLayoutGuide key="safeArea" id="mfy-ke-40g"/>
                     </view>
                     <connections>
-                        <outlet property="subject" destination="IhF-Cv-Gf6" id="LBR-lg-sqY"/>
+                        <outlet property="bodyTextView" destination="qay-m3-s6g" id="hU0-dI-ljD"/>
+                        <outlet property="subjectTextField" destination="IhF-Cv-Gf6" id="LBR-lg-sqY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B6b-qo-nGb" userLabel="First Responder" sceneMemberID="firstResponder"/>

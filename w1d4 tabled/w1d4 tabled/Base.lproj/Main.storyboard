@@ -64,7 +64,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="EdX-R0-kOr">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="5nZ-B6-b9x"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="5nZ-B6-b9x">
+                            <connections>
+                                <action selector="edit:" destination="OWc-Zv-eE8" id="25g-Ra-0Ub"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="textField" destination="BDV-aa-SHi" id="PS0-sf-Q6g"/>

@@ -17,7 +17,9 @@ class EntryController {
     var entries = [Entry]()
     
     //create a private init to ensure that no other file can create another instance of this class
-    private init (){}
+    private init (){
+
+    }
     
     //MARK: - CRUD Functions
     
@@ -25,6 +27,7 @@ class EntryController {
     func addEntry(withText text: String){
         let entry = Entry(text: text)
         entries.append(entry)
+
     }
     
     //delete entry
@@ -33,12 +36,7 @@ class EntryController {
         guard let index = entries.index(of: entry) else { return }
         //remove entry from array
         entries.remove(at: index)
-    }
-    
-    //move item
-    func moveEntry(from index: Int, to desitination: Int){
-   
-        //TODO
+
     }
     
     //count entries
@@ -49,22 +47,5 @@ class EntryController {
     //return entry
     func entry(at index: Int) -> Entry {
         return entries[index]
-    }
-    
-    //MARK: - Persistence
-    
-    let fileURL = URL(fileURLWithPath: NSHomeDirectory())
-        .appendingPathComponent("Library")
-        .appendingPathComponent("ToDo")
-        .appendingPathExtension("plist")
-    
-    func saveData() {
-        try! (entries as NSArray).write(to: fileURL)
-    }
-    
-    func loadData() { //check back on this
-        if let entries1 = NSArray(contentsOf: fileURL) as? [Entry] {
-            entries = entries1
-        }
     }
 }

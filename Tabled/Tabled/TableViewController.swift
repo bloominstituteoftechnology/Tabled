@@ -34,6 +34,7 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
       //  self.tableView.isEditing = true
         tableView.reloadData()
+           self.becomeFirstResponder()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,15 +85,17 @@ class TableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
     }
-    */
-
+    
+    // Enable detection of shake motion
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            tableView.undoManager
+        }
+    }
 }

@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var textField: UITextField!
     
     let reuseIdentifier = "cell"
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +21,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.delegate = self
         tableView.reloadData()
         
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
     }
     
+    // Add a Share bar button that presents an activity controller so you can email or print a copy of your list
+    
+//    @objc func shareTapped() {
+//        let vc = UIActivityViewController(activityItems: <#T##[Any]#>, applicationActivities: <#T##[UIActivity]?#>)
+//        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+//        present(vc, animated: true)
+//    }
+    
     @IBAction func add(_ sender: Any) {
-        
+        guard let text = textField.text, !text.isEmpty else { return }
+        Model.shared.addItem(text)
+        tableView.reloadData()
+        textField.text = ""
     }
     
     @IBAction func editTable(_ sender: Any) {
@@ -38,6 +50,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.setEditing(false, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editTable(_:)))
     }
+    
+//    override func becomeFirstResponder() -> Bool {
+//        return true
+//    }
+//    
+//    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+//        if motion == .motionShake {
+//            editTable(<#T##sender: Any##Any#>)
+//        }
+//    }
     
     // MARK: - UITableViewDataSource
     

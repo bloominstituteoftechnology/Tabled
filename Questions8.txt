@@ -1,0 +1,9 @@
+Delegation is simply assigning or passing the responsibility. iOS developers use this because it's a neat, safe and clean way to for the one thing(table view) to assign responsibilities to another thing(view controller).
+
+It's is the source of data in respect to the table view. The table view delegate is controller the views and rows.
+
+Animation makes these actions work and be seen by users.
+
+A model allows for reusability and it's organized.
+
+We only call reloadData with viewDidLoad and the App delegate. Every where we use that specific method.

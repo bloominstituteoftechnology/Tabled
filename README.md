@@ -24,11 +24,17 @@ Your completed application will look like the following GIF:
 
 Demonstrate your understanding of today's concepts by answering the following free-form questions. Submit them as a text file along with your project.
 
-* What is delegation and why do iOS developers use it?
-* Why is a table view's data source a kind of delegation? And how does it differ from a table view's delegate?
-* Why use animation in the table when adding, removing, or reordering items?
-* Why use a model? Why not just update an array of items directly in your table?
-* When do you call `reloadData`? When don't you?
+•    What is delegation and why do iOS developers use it?
+Answer:    It allows a class or struct to delegate work to other parts of the app so we can setup for example tableViews and use delegation to fill those tableViews with the data needed. 
+•    Why is a table view's data source a kind of delegation? And how does it differ from a table view's delegate?
+Answer:    The dataSource tells the tableView what data to display. The delegate handles user interaction. 
+•    Why use animation in the table when adding, removing, or reordering items?
+Answer:    It is prettier and makes for a butter user experience and animation communicates actions more effectively. 
+•    Why use a model? Why not just update an array of items directly in your table?
+Answer:    Using a model means we can reuse the data to populate multiple tableViews or other features. 
+•    When do you call reloadData? When don't you?
+Answer:    When there is a change to the view or to the data the view is displaying is a good time. 
+            ⁃    Whenever you feel like it is a bad time. 
 
 ## Project Setup
 

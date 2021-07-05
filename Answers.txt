@@ -1,0 +1,20 @@
+What is delegation and why do iOS developers use it?
+
+Delegation safely lets view talk to view controllers.
+
+
+
+Why is a table view's data source a kind of delegation? And how does it differ from a table view's delegate?
+
+
+
+Why use animation in the table when adding, removing, or reordering items?
+So that the user knows changes have occurred.
+
+
+Why use a model? Why not just update an array of items directly in your table?
+Make apps easier to read for yourself and other programmers.
+
+
+When do you call reloadData? When don't you?
+After you have made changes call reloadData. You don't do this when all data is the same.

@@ -1,0 +1,9 @@
+1. Delegation allows for safety by helping follow MVC. Delegation is when a view or model does not know what to do(delegator) and delegates the task to the delegate. iOS developers use it for safety and organization.
+
+2. A table view's data source is a kind of delegation because it tells the table view what kinds of things to put in its cells and how many cells it has. The table view delegate responds to user interactions, the table passes responsibility for what happens when a user touches the table. In short, the data source operates as a delegate because the table view delegates the responsibility of saying how many cells it has and what's in them. The delegate tells the table view what to do when the user touches the already-existing cells.
+
+3.It is beneficial because it makes the app look prettier and more "native", which is what a production-ready app should look like.
+
+4. The model, again, is a safe way to do things because all methods, variables, etc. inside of a model are not global. They can only be edited/called through an instance of the struct/class. Information is more compartmentalized, less messy and less likely to burn in a thousand flames through accidental editing.
+
+5.You call reloaddata() when you have saved data and the user reenters the application. You do not use it when you want to update the data that the user sees while the user is still in the application. It's less beautiful and less "native".

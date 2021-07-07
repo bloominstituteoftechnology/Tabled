@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh7000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \ul \ulc0 TABLE VIEWS, TABLE VIEW CONTROLLERS, & DELEGATION\ulnone \
+[ Comprehension Questions ]\
+\
+What is delegation and why do iOS developers use it?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr\partightenfactor0
+
+\b0 \cf0 >> Delegation (the delegation pattern) allows for a class or a struct to give/delegate work to another class or struct. Developers use it because often an object may not have the information needed in order to fulfill a task, so it gives the task to something that 
+\i does
+\i0  have that information. It becomes super useful in keeping your code re-usable and clean/organized. The pattern has two parts: the delegator, who delegates the work to something else, and the delegate, who receives the work to be done.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr\partightenfactor0
+
+\b \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 Why is a table view\'92s data source a kind of delegation? And how does it differ from a table view\'92s delegate?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr\partightenfactor0
+
+\b0 \cf0 >> When trying to set up a Table View, the Table View is the delegator because it needs 2 pieces of information that it doesn\'92t have on its own - the number of cells it should have in each section and the information the cells should display. It delegates the retrieval of this information to the UITableViewDataSource (often a View Controller), which is the delegate in this instance. 
+\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Why use animation in the table when adding, removing, or reordering items?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr\partightenfactor0
+
+\b0 \cf0 >> Animation in the table helps the application to look more professional.  
+\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+Why use a model? Why not just update an array of items directly in your table?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr\partightenfactor0
+
+\b0 \cf0 >> We use a model to keep things clean and organized. The model allows the data to be reused elsewhere.
+\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+When do you call reloadData ? When don\'92t you?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qr\partightenfactor0
+
+\b0 \cf0 >> We call reloadData when we want the table view to completely reload its data. We don\'92t call it in methods that insert or delete rows. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 MY OWN QUESTIONS:\
+>> We \'93conform our ViewController to UITableViewDataSource and UITableViewDelegate\'94 in the override func viewWillAppear. What exactly is this function and what does it do?}

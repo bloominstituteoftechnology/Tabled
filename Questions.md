@@ -1,0 +1,17 @@
+## Table Views, Table View Controllers, and Delegation Challenge Questions
+
+**What is delegation and why do iOS developers use it?**
+The delegate pattern allows another class to responsibility for completing some tasks that another class is not capable of fulfilling.  iOS developers use delegation to implement the MVC pattern.
+
+**Why is a table view's data source a kind of delegation? And how does it differ from a table view's delegate?**
+The table views data source is a kind of delegation because it provides the information that is required to modify a table view.  A table view’s delegate actually hands off the responsibility of maintaining the data to a separate class and uses that delegate to establish a connection to the data source.
+
+**Why use animation in the table when adding, removing, or reordering items?**
+The use of animation provides the standard controls such as swiping, fading, delete buttons, etc when the table data edits are done.
+
+**Why use a model? Why not just update an array of items directly in your table?**
+The model maintains the data of an application.  It maintains the integrity of the data by implementing getter and setter methods that allow other classes to access the data structures of the application.  These getters and setters are the only way to access the data.  They are designed to insure the data to be compromised.
+
+**When do you call reloadData? When don't you?**
+The reloadData method is called whenever the data changes.  When the standard animations are used it is not necessary
+to call reloadData.  In our project some of the reloadData() calls were replaced by the animation calls.
